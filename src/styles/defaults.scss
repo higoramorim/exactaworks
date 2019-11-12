@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #201f20;
+  --white: #fff;
+
+  --gray-100: #2c2b2c;
+
+  --blue-500: #0697aa;
+  --green-500: #7cb342;
+  --red-500: #c41c00;
+
+  --yellow-600: #fffcee;
+  --yellow-400: #e7e4d8;
+  --yellow-300: #a8a79e;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

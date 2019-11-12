@@ -1,0 +1,12 @@
+@mixin ease($props...) {
+  $transitions: ();
+
+  @each $prop in $props {
+    $index: index($props, $prop);
+    $item: unquote(nth($props, $index));
+
+    $transitions: append($transitions, unquote('#{$item} .15s ease-out'))
+  }
+
+  transition: zip($transitions);
+}

@@ -1,0 +1,15 @@
+.header {
+  background: var(--header-background);
+
+  .nav {
+    &__item {
+      @include ease('color');
+
+      color: var(--light-text-color);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

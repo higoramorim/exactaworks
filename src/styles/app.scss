@@ -1,0 +1,14 @@
+@import './defaults.scss';
+@import './utils.scss';
+@import './mixins/easing.scss';
+
+@import './theme.scss';
+
+@import './components/header.scss';
+
+body {
+  background: var(--page-background);
+  font-family: var(--primary-font);
+  height: 100vh;
+  width: 100vw;
+}

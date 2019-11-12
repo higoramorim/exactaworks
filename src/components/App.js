@@ -1,10 +1,18 @@
 import React from 'react';
-import '../styles/App.scss';
+import '../styles/app.scss';
 
-function App() {
-  return (
-    <div className="App">Vrau</div>
-  );
-}
+import Header from './Header';
+
+const items = [
+  { title: 'Como funciona', path: '/' },
+  { title: 'Privacidade', path: '/' },
+  { title: 'Ajuda', path: '/' },
+]
+
+const App = () => (
+  <div className="App">
+    <Header items={items}/>
+  </div>
+);
 
 export default App;
