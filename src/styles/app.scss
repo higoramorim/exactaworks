@@ -1,13 +1,30 @@
+/* Resources */
 @import './defaults.scss';
 @import './utils.scss';
-@import './mixins/easing.scss';
 
+/* Mixins */
+@import './mixins/border.scss';
+@import './mixins/easing.scss';
+@import './mixins/resolutions.scss';
+
+/* Theme */
 @import './theme.scss';
 
+/* Components */
+@import './components/label.scss';
 @import './components/header.scss';
+@import './components/info-section.scss';
+@import './components/info-widget.scss';
+
+/* App */
+html,
+body {
+  // min-width: 480px;
+}
 
 body {
   background: var(--page-background);
+  color: var(--body-color);
   font-family: var(--primary-font);
   height: 100vh;
   width: 100vw;

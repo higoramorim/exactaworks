@@ -1,0 +1,24 @@
+.info-section {
+  background: var(--info-section-background);
+
+  &__container {
+    display: block;
+    padding: var(--gutter);
+    width: 100%;
+  }
+
+  @include screen-sm() {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+
+  @include screen-lg() {
+    &__container {
+      width: 60%;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.info-widget {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+
+  &__label,
+  &__content {
+    font-size: .75em;
+  }
+  
+  &__label {
+    color: var(--primary-color);
+    display: block;
+    margin: 0;
+    width: 55%;
+  }
+
+  &__content {
+    color: var(--light-text-color);
+    text-align: right;
+    width: 45%;
+  }
+}
+
+@include screen-sm() {
+  .info-widget {
+    display: block;
+    margin: 0;
+    width: auto;
+    
+    &__label,
+    &__content {
+      width: auto;
+    }
+
+    &__label {
+      font-size: .875em;
+    }
+
+    &__content {
+      font-size: 1.75em;
+      text-align: left;
+    }
+
+    &--inline {
+      display: flex;
+      align-content: baseline;
+  
+      .info-widget__label {
+        margin: 0 5px 0 0;
+      }
+  
+      .info-widget__content {
+        font-size: .875em;
+      }
+    }
+  }
+}

@@ -1,4 +1,14 @@
+$gutter: 15px;
+
 :root {
+  --body-color: var(--black);
+  --border: 2px solid;
+
+  --gutter: #{$gutter};
+  --gutter-2x: #{$gutter * 2};
+  --gutter-4x: #{$gutter * 4};
+  --gutter-6x: #{$gutter * 6};
+
   --primary-font: 'Staatliches', sans-serif;
   --primary-color: var(--blue-500);
   
@@ -8,4 +18,6 @@
   
   --page-background: var(--yellow-600);
   --header-background: var(--black);
+  
+  --info-section-background: var(--gray-100);
 }

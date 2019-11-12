@@ -1,15 +1,55 @@
 .header {
   background: var(--header-background);
+  display: flex;
+  justify-content: center;
+  padding: var(--gutter-2x);
 
   .nav {
     &__item {
       @include ease('color');
 
       color: var(--light-text-color);
+      display: inline-block;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: var(--gutter-4x);
+
+        &:after {
+          @include border(--primary-color);
+
+          border-radius: 50%;
+          content: '';
+          display: block;
+          height: .25em;
+          top: 50%;
+          position: absolute;
+          right: calc(var(--gutter-2x) * -1);
+          transform: translate(50%, -50%);
+          width: .25em;
+        }
+      }
       
       &:hover {
         color: var(--primary-color);
       }
     }
   }
+
+  @include screen-md() {
+    justify-content: flex-end;
+
+    .nav {
+      &__item {
+        &:not(:last-child) {
+          margin-right: var(--gutter-2x);
+
+          &:after {
+            right: calc(var(--gutter) * -1);
+          }
+        }
+      }
+    }
+  }
 }
+
