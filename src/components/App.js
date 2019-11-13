@@ -3,15 +3,35 @@ import '../styles/app.scss';
 
 import Header from './Header';
 import InfoSection from './InfoSection';
+import Wizard from './Wizard';
+
 import { FormattedMessage } from 'react-intl';
 
 const items = [
-  { title: <FormattedMessage id="como_funciona" />, path: '/' },
-  { title: <FormattedMessage id="privacidade" />, path: '/' },
-  { title: <FormattedMessage id="ajuda" />, path: '/' },
-]
+  { label: <FormattedMessage id="como_funciona" />, path: '/' },
+  { label: <FormattedMessage id="privacidade" />, path: '/' },
+  { label: <FormattedMessage id="ajuda" />, path: '/' },
+];
 
-const widgets = []
+const tabs = [
+  { 
+    label: <FormattedMessage id="simule" />,
+    content: (<h1>Vrau na diagonal</h1>),
+  },
+  {
+    label: <FormattedMessage id="preencha_o_cadastro" />,
+    content: (<h1>Vrau na diagonal</h1>),
+    active: true,
+  },
+  {
+    label: <FormattedMessage id="revise_seu_pedido" />,
+    content: (<h1>Vrau na diagonal</h1>),
+  },
+  {
+    label: <FormattedMessage id="finalize_o_pedido" />,
+    content: (<h1>Vrau na diagonal</h1>),
+  },
+]
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +56,7 @@ class App extends Component {
           content: '12 vezes',
         },
         {
-          label:  <FormattedMessage id="Para" />,
+          label:  <FormattedMessage id="para" />,
           content: 'Comprar uma bike',
         },
       ]
@@ -48,6 +68,7 @@ class App extends Component {
       <div className="App">
         <Header items={items} />
         <InfoSection widgets={this.state.widgets} />
+        <Wizard items={tabs}/>
       </div>
     )
   }

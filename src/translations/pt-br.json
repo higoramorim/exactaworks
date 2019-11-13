@@ -2,9 +2,13 @@
   "ajuda": "Ajuda",
   "como_funciona": "Como funciona",
   "cpf": "CPF",
+  "finalize_o_pedido": "Finalize o pedido",
   "me_chamo": "Me chamo",
   "para": "Para",
   "preciso_de": "Preciso de",
+  "preencha_o_cadastro": "Preencha o cadastro",
   "privacidade": "Privacidade",
-  "quero_parcelar_em": "Quero parcelar em"
+  "quero_parcelar_em": "Quero parcelar em",
+  "revise_seu_pedido": "Revise seu pedido",
+  "simule": "Simule"
 }

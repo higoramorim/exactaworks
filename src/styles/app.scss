@@ -15,12 +15,10 @@
 @import './components/header.scss';
 @import './components/info-section.scss';
 @import './components/info-widget.scss';
+@import './components/tabs.scss';
+@import './components/wizard.scss';
 
 /* App */
-html,
-body {
-  // min-width: 480px;
-}
 
 body {
   background: var(--page-background);

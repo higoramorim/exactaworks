@@ -4,6 +4,7 @@ $gutter: 15px;
   --body-color: var(--black);
   --border: 2px solid;
 
+  --gutter-half: #{$gutter / 2};
   --gutter: #{$gutter};
   --gutter-2x: #{$gutter * 2};
   --gutter-4x: #{$gutter * 4};
@@ -14,10 +15,14 @@ $gutter: 15px;
   
   --light-text-color: var(--yellow-600);
   --medium-text-color: var(--yellow-400);
-  --dark-text-color: var(--yellow-600);
+  --dark-text-color: var(--yellow-300);
   
   --page-background: var(--yellow-600);
   --header-background: var(--black);
   
   --info-section-background: var(--gray-100);
+  --wizard-background: var(--yellow-400);
+
+  --tab-text-color: var(--yellow-300);
+  --tab-active-text-color: var(--gray-100);
 }

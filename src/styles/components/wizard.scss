@@ -1,0 +1,12 @@
+.wizard {
+  &__header {
+    background: var(--wizard-background);
+    overflow: auto;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-2x);
+  }
+}

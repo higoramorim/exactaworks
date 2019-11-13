@@ -7,7 +7,9 @@ const InfoSection = ({ widgets, children }) => {
       <div className="info-section__container">
         {
           widgets
-            ? widgets.map(widget => <InfoWidget {...widget} />)
+            ? widgets.map((widget, index) => (
+                <InfoWidget key={index} {...widget} />
+              ))
             : children
         }
       </div>
