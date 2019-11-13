@@ -4,6 +4,7 @@ import '../styles/app.scss';
 import Header from './Header';
 import InfoSection from './InfoSection';
 import Wizard from './Wizard';
+import Cadastro from './tabs/Cadastro';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -16,20 +17,23 @@ const items = [
 const tabs = [
   { 
     label: <FormattedMessage id="simule" />,
-    content: (<h1>Vrau na diagonal</h1>),
+    content: null,
+    completed: true,
   },
   {
     label: <FormattedMessage id="preencha_o_cadastro" />,
-    content: (<h1>Vrau na diagonal</h1>),
+    content: <Cadastro />,
     active: true,
   },
   {
     label: <FormattedMessage id="revise_seu_pedido" />,
-    content: (<h1>Vrau na diagonal</h1>),
+    content: null,
+    completed: false,
   },
   {
     label: <FormattedMessage id="finalize_o_pedido" />,
-    content: (<h1>Vrau na diagonal</h1>),
+    content: null,
+    completed: false,
   },
 ]
 

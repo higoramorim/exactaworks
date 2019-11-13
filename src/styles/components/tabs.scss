@@ -13,12 +13,12 @@
     padding: var(--gutter);
 
     &__number {
-      @include ease("background");
-      
+      @include ease("background", "border-color", "color");
+      @include border(--tab-text-color);
+
       align-items: center;
-      background: var(--tab-text-color);
       border-radius: 50%;
-      color: var(--page-background);
+      color: var(--tab-text-color);
       display: flex;
       height: 25px;
       justify-content: center;
@@ -32,6 +32,8 @@
 
       .tab__number {
         background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--page-background);
       }
     }
 
@@ -41,7 +43,15 @@
 
       .tab__number {
         background: var(--tab-active-text-color);
+        border-color: var(--tab-active-text-color);
         color: var(--primary-color);
+      }
+    }
+
+    &--completed {
+      .tab__number {
+        background: var(--tab-text-color);
+        color: var(--page-background);
       }
     }
   }

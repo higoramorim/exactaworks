@@ -9,6 +9,7 @@ const Tabs = ({ items, onClick, progressive }) => {
           const classes = classnames({
             tab: true,
             'tab--active': item.active,
+            'tab--completed': item.completed,
           });
 
           return (
