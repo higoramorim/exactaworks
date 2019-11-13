@@ -1,0 +1,11 @@
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__element {
+    @include border(--body-color);
+
+    background: transparent;
+    padding: var(--gutter);
+  }
+}
