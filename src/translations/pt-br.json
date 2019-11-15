@@ -4,9 +4,11 @@
   "cpf": "CPF",
   "dados_pessoais": "Dados pessoais",
   "data_de_emissao": "Data de emissão",
+  "feminino": "Feminino",
   "finalize_o_pedido": "Finalize o pedido",
   "me_chamo": "Me chamo",
   "orgao_expeditor": "Orgão expeditor",
+  "masculino": "Masculino",
   "numero_do_rg": "Número do RG",
   "para": "Para",
   "preciso_de": "Preciso de",
@@ -14,5 +16,6 @@
   "privacidade": "Privacidade",
   "quero_parcelar_em": "Quero parcelar em",
   "revise_seu_pedido": "Revise seu pedido",
+  "sexo": "Sexo",
   "simule": "Simule"
 }

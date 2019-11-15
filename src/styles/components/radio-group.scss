@@ -1,0 +1,38 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+
+  .toggle {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin: 0 0 var(--gutter);
+    }
+  }
+
+  @include screen-lg() {
+    align-items: center;
+    flex-direction: row;
+    
+    .label {
+      margin: 0 5px 0 0;
+    }
+
+    .toggle {
+      &:not(:last-child) {
+        margin: 0 var(--gutter) 0 0;
+        position: relative;
+    
+        &:after {
+          content: '-';
+          display: block;
+          position: absolute;
+          right: calc(var(--gutter) * -1);
+          top: 50%;
+          font-size: 2em;
+          transform: translate(-25%, -50%);  
+        }
+      }
+    }
+  }
+}

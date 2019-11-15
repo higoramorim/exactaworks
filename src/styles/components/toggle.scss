@@ -1,12 +1,18 @@
-.input {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-
+.toggle {
   &__element {
+    display: none;
+
+    &:checked + .toggle__target {
+      border-color: var(--primary-color);
+      color: var(--primary-color)
+    }
+  }
+
+  &__target {
     @include border(--body-color);
 
     background: transparent;
+    display: block;
     font-family: var(--primary-font);
     font-size: 1.5em;
     padding: var(--gutter-half);
@@ -25,18 +31,8 @@
     }
   }
 
-  &--invalid {
-    .input__element {
-      border-color: var(--error-color);
-
-      & + .label {
-        color: var(--error-color);
-      }
-    }
-  }
-
   @include screen-lg() {
-    &__element {
+    &__target {
       width: 20vw;
     }
   }

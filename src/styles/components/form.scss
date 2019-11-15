@@ -3,16 +3,21 @@
 
   &__container {
     align-items: center;
-    background: pink;
+    // background: pink;
     display: flex;
     flex-direction: column;
     width: 100%;
 
     .row {
       flex-direction: column;
-      
+      width: 100%;
+
+      &:not(:first-of-type) {
+        margin: var(--gutter) 0 0;
+      }
+
       .input:not(:last-child) {
-        margin: 0 0 10px;
+        margin: 0 0 var(--gutter);
       }
     }
   }
@@ -26,6 +31,7 @@
     &__container {
       .row {
         flex-direction: row;
+        width: auto;
 
         .input:not(:last-child) {
           margin-right: var(--gutter);

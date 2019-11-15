@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Label = ({ value, children }) => {
+const Label = ({ value, inputId, children }) => {
   return (
-    <label className="label">
+    <label className="label" for={inputId}>
       {value || children}
     </label>
   )
