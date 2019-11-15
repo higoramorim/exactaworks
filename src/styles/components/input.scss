@@ -6,6 +6,8 @@
     @include border(--body-color);
 
     background: transparent;
-    padding: var(--gutter);
+    font-family: var(--primary-font);
+    font-size: 1.5em;
+    padding: var(--gutter-half);
   }
 }

@@ -8,6 +8,7 @@
     color: var(--tab-text-color);
     display: flex;
     flex-direction: column;
+    font-size: .875em;
     justify-content: baseline;
     min-width: 40%;
     padding: var(--gutter);
@@ -62,9 +63,10 @@
 
     .tab {
       flex-direction: row;
+      font-size: 1em;
       min-width: auto;
       padding: var(--gutter) var(--gutter-2x);
-      
+
       &__number {
         margin: 0 10px 0 0;
       }

@@ -1,0 +1,47 @@
+.form {
+  width: 100%;
+
+  &__container {
+    align-items: center;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .row {
+      flex-direction: column;
+      
+      .input:not(:last-child) {
+        margin: 0 0 10px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--gutter-2x);
+    text-align: center;
+  }
+  
+  @include screen-lg() {
+    &__container {
+      .row {
+        flex-direction: row;
+
+        .input:not(:last-child) {
+          margin-right: var(--gutter);
+          position: relative;
+
+          &:after {
+            content: '-';
+            display: block;
+            position: absolute;
+            right: calc(var(--gutter) * -1);
+            top: 50%;
+            font-size: 2em;
+            transform: translate(-25%, -20%);  
+          }
+        }
+      }
+    }
+  }
+}

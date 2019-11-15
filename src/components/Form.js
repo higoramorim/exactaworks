@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Form = ({ onSubmit, children }) => {
+const Form = ({ title, onSubmit, children }) => {
   return (
-    <form onSubmit={onSubmit}>
-      {children}
+    <form className="form" onSubmit={onSubmit}>
+      <div className="form__container">
+        {title && <h1 className="form__title">{title}</h1>}
+
+        {children}
+      </div>
     </form>
   )
 }

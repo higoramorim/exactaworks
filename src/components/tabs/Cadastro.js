@@ -2,12 +2,20 @@ import React from 'react';
 import Form from '../Form';
 import Input from '../Input';
 
+import { FormattedMessage } from 'react-intl';
+
 const Cadastro = (props) => {
   return (
-    <Form onSubmit={console.log}>
-      <h1>Dados pessoais</h1>
+    <Form title={<FormattedMessage id="dados_pessoais" />} onSubmit={console.log}>
+      <div className="row">
+        <Input label={<FormattedMessage id="numero_do_rg" />} onChange={() => {}}/>
+        <Input label={<FormattedMessage id="data_de_emissao" />} onChange={() => {}}/>
+        <Input label={<FormattedMessage id="orgao_expeditor" />} onChange={() => {}}/>
+      </div>
 
-      <Input label="Número do RG" onChange={() => {}}/>
+      <div className="row">
+        
+      </div>
     </Form>
   )
 }
