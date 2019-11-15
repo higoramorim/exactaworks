@@ -28,4 +28,10 @@ $gutter: 15px;
 
   --tab-text-color: var(--yellow-300);
   --tab-active-text-color: var(--gray-100);
+
+  --button-background: var(--primary-color);
+  --button-disabled-background: var(--yellow-400);
+  
+  --button-text-color: var(--white);
+  --button-disabled-text-color: var(--yellow-300);
 }

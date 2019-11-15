@@ -1,0 +1,38 @@
+$primary-color: #{var(--primary-color)};
+
+.btn {
+  @include ease("background");
+
+  align-items: center;
+  background: var(--button-background);
+  border: none;
+  color: var(--button-text-color);
+  display: flex;
+  font-family: var(--primary-font);
+  font-size: 1.5em;
+  padding: var(--gutter) var(--gutter-2x);
+  
+  .spinner {
+    margin-right: var(--gutter);
+
+    .path {
+      stroke: var(--button-text-color);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background: var(--button-disabled-background);
+    color: var(--button-disabled-text-color);
+    pointer-events: none;
+
+    .spinner {
+      .path {
+        stroke: var(--button-disabled-text-color);
+      }
+    }
+  }
+}
