@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ items }) => {
   return (
     <header className="header">
       <nav className="nav">
         {items.map(({ label, path }, index) => (
-          <a
+          <Link
             className="nav__item"
-            href={path}
+            to={path}
             key={index}
           >
             {label}
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

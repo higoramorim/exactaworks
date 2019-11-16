@@ -1,34 +1,39 @@
 .toggle {
+  &:focus {
+    outline: none;
+
+    .toggle__element {
+      &:not(:disabled) {
+        & + .toggle__target {
+          border-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
   &__element {
     display: none;
 
     &:checked + .toggle__target {
-      border-color: var(--primary-color);
-      color: var(--primary-color)
+      background: var(--primary-color);
+      color: var(--white)
+    }
+
+    &:disabled + .toggle__target {
+      background: var(--button-disabled-background);
+      pointer-events: none;
     }
   }
 
   &__target {
     @include border(--body-color);
+    @include ease("border-color", "color");
 
     background: transparent;
     display: block;
     font-family: var(--primary-font);
     font-size: 1.5em;
     padding: var(--gutter-half);
-
-    &:focus {
-      @include ease("border-color");
-
-      border-color: var(--primary-color);
-      outline: none;
-
-      & + .label {
-        @include ease("color");
-      
-        color: var(--primary-color);
-      }
-    }
   }
 
   @include screen-lg() {

@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Toggle = ({ type, label, value, checked, onChange }) => {
+const Toggle = ({ type, label, value, checked, name, onChange, disabled }) => {
+  const [state, setState] = useState({ checked: checked || false });
+  
   return (
-    <label class="toggle">
+    <label className="toggle" tabIndex="0" onKeyUp={
+      (evt) => {
+        if (evt.keyCode === 13 || evt.keyCode === 32) {
+          onChange(evt);
+        }
+      }
+    }>
       <input
         className="toggle__element"
         type={type}
-        checked={checked}
+        checked={state.checked}
         value={value}
-        onChange={onChange}
+        onChange={(evt) => {
+          setState((state) => ({ checked: !state.checked }));
+          onChange(evt);
+        }}
+        name={name}
+        disabled={disabled}
       />
       
       <span className="toggle__target">

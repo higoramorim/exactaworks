@@ -1,21 +1,19 @@
 import React from 'react';
 import classnames from 'classnames';
-import MaskedInput from 'react-text-mask'
 
 import Label from './Label';
 
 const Input = (props) => {
   const {
-    type = 'text',
-    mask = [],
     name,
     id,
-    label,
     value,
     invalid,
-    onKeyUp,
+    label,
+    onChange,
     onBlur,
     disabled,
+    items = [],
   } = props;
 
   const classes = classnames({
@@ -25,18 +23,21 @@ const Input = (props) => {
 
   return (
     <div className={classes}>
-      <MaskedInput
-        mask={mask}
+      <select
         className="input__element"
-        guide={false}
         name={name}
         id={id}
-        type={type}
         value={value}
         onBlur={onBlur}
-        onKeyUp={onKeyUp}
+        onChange={onChange}
         disabled={disabled}
-      />
+      >
+        {items.map(({ label, value }, index) => (
+          <option key={index} value={value}>
+            {label}
+          </option>
+        ))}
+      </select>
       <Label value={label} inputId={id}/>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import Header from './Header';
@@ -21,8 +21,8 @@ const App = props => {
 
   return (
     <div className="App">
-      <Header items={state.routes} />
       <Router>
+        <Header items={state.routes} />
         <Route path="/" exact render={() => <HomePage/>}/>
         <Route path="/cadastro" exact render={() => <CadastroPage/>}/>
       </Router>

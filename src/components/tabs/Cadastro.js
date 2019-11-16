@@ -1,33 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Button from '../Button';
 import Form from '../Form';
 import Input from '../Input';
+import Select from '../Select';
 import RadioGroup from '../RadioGroup';
 import GenderEnum from '../../enums/gender';
+import moment from 'moment';
+import Http from '../../services/Http';
 
 const Cadastro = (props) => {
   const [state, setState] = useState({
+    loading: true,
     data: {
       rg: '',
       data_emissao: '',
-      // orgao_expeditor: '',
-      // sexo: '',
+      orgao_expeditor: '',
+      sexo: 'M',
     },
+    entities: [],
     initial_interaction: true,
     is_invalid: true,
     invalid_fields: {
       rg: false,
       data_emissao: false,
-      // orgao_expeditor: false,
-      // sexo: false,
-    }
+      orgao_expeditor: false,
+      sexo: false,
+    },
   });
 
+  useEffect(() => {
+    async function fetchEntities() {
+      Http
+        .get('orgaos.json')
+        .then(({ orgao_emissor }) => {
+          setState((state) => ({
+            ...state,
+            loading: false,
+            entities: orgao_emissor,
+          }));
+        })
+        .catch(console.log);
+    }
+
+    fetchEntities();
+  });
+  
   const getInvalidFields = ({ data }) => Object
     .keys(data)
-    .map(key => ({ [key]: data[key] === '' }))
+    .map(key => {
+      if (key === 'data_emissao') {
+        const date = moment(data[key], 'DD/MM/YYYY');
+        const isDateInvalid = (data[key].length < 10)
+          ? true
+          : !date.isValid() || date.isAfter(moment());
+        
+        return { [key]: isDateInvalid };
+      }
+
+      if(key === 'rg') {
+        return { [key]: data[key].length < 12 };
+      }
+
+      return { [key]: data[key] === '' };
+    })
     .reduce((fields, obj) => ({ ...fields, ...obj }), {});
 
   const validate = ({ invalid_fields }) => Object
@@ -37,7 +74,6 @@ const Cadastro = (props) => {
   
   const updateValue = (data) => {
     setState((state) => ({
-      ...state,
       data: {
         ...state.data,
         ...data,
@@ -54,28 +90,31 @@ const Cadastro = (props) => {
       <div className="row">
         <Input
           label={<FormattedMessage id="numero_do_rg" />}
-          onChange={({ target }) => updateValue({ rg: target.value })}
+          value={state.data.rg}
+          onKeyUp={({ target }) => updateValue({ rg: target.value })}
           onBlur={({ target }) => updateValue({ rg: target.value })}
           mask={[/[0-9]/,/[0-9]/,'.',/[0-9]/,/[0-9]/,/[0-9]/,'.',/[0-9]/,/[0-9]/,/[0-9]/,'-',/[0-9]/]}
           id="numero_do_rg"
           invalid={state.invalid_fields.rg}
+          disabled={state.loading}
           name="numero_do_rg"
         />
         <Input
           label={<FormattedMessage id="data_de_emissao" />}
-          value={state.data_emissao}
+          value={state.data.data_emissao}
           mask={[/[0-9]/,/[0-9]/,'/',/[0-9]/,/[0-9]/,'/',/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/]}
-          onChange={({ target }) => updateValue({ data_emissao: target.value })}
+          onKeyUp={({ target }) => updateValue({ data_emissao: target.value })}
           onBlur={({ target }) => updateValue({ data_emissao: target.value })}
           id="data_emissao"
           invalid={state.invalid_fields.data_emissao}
+          disabled={state.loading}
           name="data_emissao"
         />
-        <Input
+        <Select
           label={<FormattedMessage id="orgao_expeditor" />}
-          value={state.orgao_expeditor}
+          items={state.entities}
+          value={state.data.orgao_expeditor}
           onChange={({ target }) => updateValue({ orgao_expeditor: target.value })}
-          onBlur={({ target }) => updateValue({ orgao_expeditor: target.value })}
           id="orgao_expeditor"
           invalid={state.invalid_fields.orgao_expeditor}
         />
@@ -86,7 +125,8 @@ const Cadastro = (props) => {
           label={<FormattedMessage id="sexo" />}
           items={GenderEnum.toList()}
           name="sexo"
-          onChange={value => updateValue({ orgao_expeditor: value })}
+          disabled={state.loading}
+          onChange={({ target }) => updateValue({ sexo: target.value })}
           invalid={state.invalid_fields.sexo}
         />
       </div>
