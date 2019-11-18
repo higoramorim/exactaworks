@@ -12,7 +12,7 @@ import Http from '../../services/Http';
 
 const Cadastro = (props) => {
   const [state, setState] = useState({
-    loading: true,
+    // loading: true,
     data: {
       rg: '',
       data_emissao: '',
@@ -30,22 +30,22 @@ const Cadastro = (props) => {
     },
   });
 
-  useEffect(() => {
-    async function fetchEntities() {
-      Http
-        .get('orgaos.json')
-        .then(({ orgao_emissor }) => {
-          setState((state) => ({
-            ...state,
-            loading: false,
-            entities: orgao_emissor,
-          }));
-        })
-        .catch(console.log);
-    }
+  // useEffect(() => {
+  //   async function fetchEntities() {
+  //     Http
+  //       .get('orgaos.json')
+  //       .then(({ orgao_emissor }) => {
+  //         setState((state) => ({
+  //           ...state,
+  //           loading: false,
+  //           entities: orgao_emissor,
+  //         }));
+  //       })
+  //       .catch(console.log);
+  //   }
 
-    fetchEntities();
-  });
+  //   fetchEntities();
+  // });
   
   const getInvalidFields = ({ data }) => Object
     .keys(data)
