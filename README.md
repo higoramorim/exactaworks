@@ -37,7 +37,7 @@ npm install
 ```
 ou
 ```
-yarn install
+yarn
 ```
 
 ### 3. Suba o servidor
