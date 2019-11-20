@@ -32,6 +32,7 @@ const Input = (props) => {
         onChange={onChange}
         disabled={disabled}
       >
+        <option value="" selected disabled>Selecione uma opção</option>
         {items.map(({ label, value }, index) => (
           <option key={index} value={value}>
             {label}

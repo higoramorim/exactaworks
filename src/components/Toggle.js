@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Toggle = ({ type, label, value, checked, name, onChange, disabled }) => {
-  const [state, setState] = useState({ checked: checked || false });
+  const [state, setState] = useState({ checked: Boolean(checked) });
   
   return (
     <label className="toggle" tabIndex="0" onKeyUp={

@@ -17,9 +17,12 @@ const Cadastro = (props) => {
       rg: '',
       data_emissao: '',
       orgao_expeditor: '',
-      sexo: 'M',
+      sexo: '',
     },
-    entities: [],
+    entities: [
+      { label: 'Teste', value: 'T' },
+      { label: 'Farafirefa', value: 'F' },
+    ],
     initial_interaction: true,
     is_invalid: true,
     invalid_fields: {
@@ -74,6 +77,7 @@ const Cadastro = (props) => {
   
   const updateValue = (data) => {
     setState((state) => ({
+      ...state,
       data: {
         ...state.data,
         ...data,
