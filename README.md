@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Exactaworks - Desafio fintech
 
-## Available Scripts
+Projeto contendo o desafio para a vaga de desenvolvedor front-end na Exactaworks.
 
-In the project directory, you can run:
+**Versão**: 1.0.0
 
-### `yarn start`
+## Considerações
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Toda documentação necessária para a utilização dos recursos contidos no projeto pode ser encontrada em seu storybook.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Em caso de dúvidas: **gcolombo07@gmail.com**.
 
-### `yarn test`
+## Executando o projeto
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para executar o projeto, é necessário conter as seguintes dependências em sua máquina:
 
-### `yarn build`
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/lang/en/) ou [NPM](https://www.npmjs.com/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A versão do projeto está disponível em um repositório privado do GitHub. Para utilizá-la, siga os passos à seguir:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 1. Clone o repositório para sua máquina
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Utilize o comando abaixo para clonar o projeto para sua máquina.
 
-### `yarn eject`
+```
+git clone https://github.com/gabrielcolombo/exactaworks.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 2. Instale as dependências da biblioteca
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Acesse o diretório da biblioteca e instale as dependências necessárias utilizando o comando abaixo: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm install
+```
+ou
+```
+yarn install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3. Suba o servidor
 
-## Learn More
+Suba o servidor do projeto, através do seguinte comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
+ou
+```
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Documentação
 
-### Code Splitting
+Para acessar a documentação dos componentes, acesse o diretório do projeto e rode o seguinte comando:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+npm run storybook
+```
+ou
+```
+yarn storybook
+```
 
-### Analyzing the Bundle Size
+## Testes unitários
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Para executar os testes do projeto, acesse o diretório do projeto e rode o seguinte comando no terminal:
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+npm test
+```
+ou
+```
+yarn test
+```
