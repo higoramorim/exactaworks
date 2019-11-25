@@ -20,8 +20,8 @@ const Cadastro = (props) => {
       sexo: '',
     },
     entities: [
-      { label: 'Teste', value: 'T' },
-      { label: 'Farafirefa', value: 'F' },
+      { label: 'Teste #1', value: 'M' },
+      { label: 'Teste #2', value: 'F' },
     ],
     initial_interaction: true,
     is_invalid: true,
